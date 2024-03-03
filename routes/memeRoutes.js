@@ -36,6 +36,7 @@ router.get('/', async (req, res) => {
 router.get('/uploads/:filename', (req, res) => {
     try {
         const filename = req.params.filename;
+        console.log(path.join(__dirname, '../uploads/', filename));
         res.sendFile(path.join(__dirname, '../uploads/', filename));
     } catch (err) {
         console.error(err);
